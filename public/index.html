@@ -33,41 +33,52 @@
 </head>
 <body>
 	<h1>Trash Pickup</h1>
+	<div>
+		<label>Username: </label>
+        <input type="text" id="username" value="" />
+	</div>
 	<h2>Click to log trash:</h2>
 	<div>
-		<button id="button-can" class="button btn-big" onclick="popupConfirm()">Can</button>
+		<button id="button-can" name="can" class="button btn-big" onclick="popupConfirm(this.name)">Can</button>
 	</div>
 	<div>
-		<button id="button-bottle" class="button btn-big" onclick="popupConfirm()">Bottle</button>
+		<button id="button-pet-bottle" name="pet-bottle" class="button btn-big" onclick="popupConfirm(this.name)">PET Bottle</button>
 	</div>
 	<div>
-		<button id="button-cigar" class="button btn-big" onclick="popupConfirm()">Cigarette</button>
+		<button id="button-glass-bottle" name="glass-bottle" class="button btn-big" onclick="popupConfirm(this.name)">Glass Bottle</button>
 	</div>
 	<div>
-		<button id="button-other" class="button btn-big" onclick="popupConfirm()">Other</button>
+		<button id="button-cigarette" name="cigarette" class="button btn-big" onclick="popupConfirm(this.name)">Cigarette</button>
+	</div>
+	<div>
+		<button id="button-tobacco-pack" name="tobacco-pack" class="button btn-big" onclick="popupConfirm(this.name)">Tobacco Pack</button>
+	</div>
+	<div>
+		<button id="button-plastic-bag" name="plastic-bag" class="button btn-big" onclick="popupConfirm(this.name)">Plastic Bag</button>
+	</div>
+	<div>
+		<button id="button-paper-bag" name="paper-bag" class="button btn-big" onclick="popupConfirm(this.name)">Paper Bag</button>
 	</div>
 	<script>
-		function popupConfirm()
+		function popupConfirm(clicked_name)
 		{
-			const url = "https://r0aqmadwh6.execute-api.ap-northeast-1.amazonaws.com/default/swTrashPickup";
 			var data = {
-				trash: "test",
-				user: "anon"
+				trash: clicked_name,
+				user: document.getElementById("username").value
 			};
 
-			const params = {
-				headers: {
-					"content-type": "application/json; charset=UTF-8",
-					"Access-Control-Allow-Origin": "*"
-				},
-				body: data,
-				method: "POST"
-			};
+			if(data.user == "")
+			{
+				alert("Please input a username");
+				return;
+			}
 
-			fetch(url, params)
+			var url = "https://r0aqmadwh6.execute-api.ap-northeast-1.amazonaws.com/default/swTrashPickup?trash=" + data.trash + "&user=" + data.user;
+
+			fetch(url)
 			.then(res => {
 				console.log(res);
-				if(res.statusCode == 200) {
+				if(res.status == 200) {
 					alert("Logged!");
 				}
 			})
