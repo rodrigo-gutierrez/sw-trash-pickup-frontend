@@ -1,0 +1,23 @@
+{
+  "name": "sw-trash-pickup-frontend",
+  "version": "1.0.0",
+  "description": "Small World Trash Pickup Front-end",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigo-gutierrez/sw-trash-pickup-frontend.git"
+  },
+  "author": "Rodrigo Gutierrez <hello@rodrigo.jp>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigo-gutierrez/sw-trash-pickup-frontend/issues"
+  },
+  "homepage": "https://github.com/rodrigo-gutierrez/sw-trash-pickup-frontend#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  }
+}
