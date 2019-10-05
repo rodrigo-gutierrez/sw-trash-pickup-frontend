@@ -16,13 +16,18 @@
     }
     
     .btn-sml {
-        width: 80px;
-        height: 20px;
+        width: 70px;
+        height: 80px;
+    }
+
+    .btn-hlf {
+        width: 150px;
+        height: 80px;
     }
     
     .btn-med {
-        width: 160px;
-        height: 40px;
+        width: 230px;
+        height: 80px;
     }
     
     .btn-big {
@@ -41,23 +46,83 @@
 		<button id="button-can" name="can" class="button btn-big" onclick="popupConfirm(this.name)">Can</button>
 	</div>
 	<div>
-		<button id="button-pet-bottle" name="pet-bottle" class="button btn-big" onclick="popupConfirm(this.name)">PET Bottle</button>
+		<button id="button-pet-bottle" name="pet-bottle" class="button btn-med" onclick="popupConfirm(this.name)">PET Bottle</button>
+		<button id="button-pet-cap" name="pet-cap" class="button btn-sml" onclick="popupConfirm(this.name)">PET Cap</button>
 	</div>
 	<div>
-		<button id="button-glass-bottle" name="glass-bottle" class="button btn-big" onclick="popupConfirm(this.name)">Glass Bottle</button>
+		<button id="button-glass-bottle" name="glass-bottle" class="button btn-med" onclick="popupConfirm(this.name)">Glass Bottle</button>
+		<button id="button-metal-cap" name="metal-cap" class="button btn-sml" onclick="popupConfirm(this.name)">Metal Cap</button>
 	</div>
 	<div>
 		<button id="button-cigarette" name="cigarette" class="button btn-big" onclick="popupConfirm(this.name)">Cigarette</button>
 	</div>
 	<div>
+		<button id="button-food-wrapper" name="food-wrapper" class="button btn-big" onclick="popupConfirm(this.name)">Food Wrapper</button>
+	</div>
+	<div>
+		<button id="button-plastic-bag" name="plastic-bag" class="button btn-hlf" onclick="popupConfirm(this.name)">Plastic Bag</button>
+		<button id="button-paper-bag" name="paper-bag" class="button btn-hlf" onclick="popupConfirm(this.name)">Paper Bag</button>
+	</div>
+	<div>
+		<button id="button-burnable" class="button btn-big" onclick="scrollDown(920)">Other Burnable</button>
+	</div>
+	<div>
+		<button id="button-non-burnable" class="button btn-big" onclick="scrollDown(2120)">Other Non-Burnable</button>
+	</div>
+	<div>
 		<button id="button-tobacco-pack" name="tobacco-pack" class="button btn-big" onclick="popupConfirm(this.name)">Tobacco Pack</button>
 	</div>
 	<div>
-		<button id="button-plastic-bag" name="plastic-bag" class="button btn-big" onclick="popupConfirm(this.name)">Plastic Bag</button>
+		<button id="button-paper-plate" name="paper-plate" class="button btn-hlf" onclick="popupConfirm(this.name)">Paper Plates</button>
+		<button id="button-plastic-utensil" name="plastic-utensil" class="button btn-hlf" onclick="popupConfirm(this.name)">Fork/Knife/Spoon</button>
 	</div>
 	<div>
-		<button id="button-paper-bag" name="paper-bag" class="button btn-big" onclick="popupConfirm(this.name)">Paper Bag</button>
+		<button id="button-plastic-lid" name="plastic-lid" class="button btn-hlf" onclick="popupConfirm(this.name)">Plastic Lid</button>
+		<button id="button-plastic-straw" name="plastic-straw" class="button btn-hlf" onclick="popupConfirm(this.name)">Plastic Straw</button>
 	</div>
+	<div>
+		<button id="button-plastic-container" name="plastic-container" class="button btn-big" onclick="popupConfirm(this.name)">Plastic Food Container</button>
+	</div>
+	<div>
+		<button id="button-foam-container" name="foam-container" class="button btn-big" onclick="popupConfirm(this.name)">Foam Food Container</button>
+	</div>
+	<div>
+		<button id="button-other-bottle" name="other-bottle" class="button btn-big" onclick="popupConfirm(this.name)">Other Plastic Bottle</button>
+	</div>
+	<div>
+		<button id="button-plastic-good" name="plastic-good" class="button btn-big" onclick="popupConfirm(this.name)">Commodity Goods (Toothbrush, etc)</button>
+	</div>
+	<div>
+		<button id="button-balloon" name="balloon" class="button btn-hlf" onclick="popupConfirm(this.name)">Balloons</button>
+		<button id="button-rubber-band" name="rubber-band" class="button btn-hlf" onclick="popupConfirm(this.name)">Rubber Bands</button>
+	</div>
+	<div>
+		<button id="button-packaging" name="packaging" class="button btn-big" onclick="popupConfirm(this.name)">Plastic/Foam Packaging</button>
+	</div>
+	<div>
+		<button id="button-firework" name="firework" class="button btn-big" onclick="popupConfirm(this.name)">Fireworks</button>
+	</div>
+	<div>
+		<button id="button-lighter" name="lighter" class="button btn-big" onclick="popupConfirm(this.name)">Cigarette Lighter</button>
+	</div>
+	<div>
+		<button id="button-toy" name="toy" class="button btn-big" onclick="popupConfirm(this.name)">Toy</button>
+	</div>
+	<div>
+		<button id="button-appliance" name="appliance" class="button btn-big" onclick="popupConfirm(this.name)">Appliances/Electronics</button>
+	</div>
+	<div>
+		<button id="button-tire" name="tire" class="button btn-big" onclick="popupConfirm(this.name)">Tires</button>
+	</div>
+	<div>
+		<button id="button-material" name="material" class="button btn-big" onclick="popupConfirm(this.name)">Construction Materials</button>
+	</div>
+	<div>
+		<button id="button-syringe" name="syringe" class="button btn-big" onclick="popupConfirm(this.name)">Syringe</button>
+	</div>
+
+
+
 	<script>
 		function popupConfirm(clicked_name)
 		{
@@ -79,10 +144,16 @@
 				console.log(res);
 				if(res.status == 200) {
 					alert("Logged!");
+					window.scrollTo(0, 0);
 				}
 			})
 			.catch(error => console.log(error))
 			
+		}
+
+		function scrollDown(y)
+		{
+			window.scrollTo(0, y);
 		}
 	</script>
 </body>
