@@ -4,19 +4,52 @@
 	<title>Small World Trash Pickup</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<style type="text/css">
-
+	.button {
+        background-color: #000000;
+        color: #FFFFFF;
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin:10px
+    }
+    
+    .btn-sml {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .btn-med {
+        width: 70px;
+        height: 30px;
+    }
+    
+    .btn-big {
+        width: 400px;
+        height: 100px;
+    }
 	</style>
 </head>
 <body>
 	<h1>Trash Pickup</h1>
 	<h2>Click to log trash:</h2>
 	<div>
-		<button id="button-can" class="button">Impressions</button>
-		<button id="button-bottle" class="button">Actions</button>
-		<button id="button-cigar" class="button">Rates</button>
-		<button id="button-other" class="button">Engagement</button>
+		<button id="button-can" class="button btn-big" onclick="popupConfirm()">Can</button>
+	</div>
+	<div>
+		<button id="button-bottle" class="button btn-big" onclick="popupConfirm()">Bottle</button>
+	</div>
+	<div>
+		<button id="button-cigar" class="button btn-big" onclick="popupConfirm()">Cigarette</button>
+	</div>
+	<div>
+		<button id="button-other" class="button btn-big" onclick="popupConfirm()">Other</button>
 	</div>
 	<script>
+		function popupConfirm()
+		{
+			alert("Logged!")
+		}
 	</script>
 </body>
 </html>
